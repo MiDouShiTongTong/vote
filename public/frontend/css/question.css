@@ -1,0 +1,189 @@
+body {
+    background-color: rgb(232, 240, 254);
+    padding-bottom: 100px;
+}
+/* question list */
+.question-jumbotron {
+    height: 278px;
+    background: url(../images/question_background.jpg) center;
+    background-size: cover;
+}
+
+.question-wrapper .question-body,
+.question-wrapper .question-list-body {
+    position: relative;
+    float: none;
+    margin-top: -99px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    background: #fff;
+}
+
+.question-wrapper .top-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    z-index: 1;
+}
+
+.question-wrapper .question-container {
+    background-color: #fff;
+}
+
+.question-content-container .question-title,
+.question-detail-content-container .question-detail-title,
+.question-list-container .question-list-title {
+    padding: 24px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 34px;
+}
+
+.question-content-container .question-item,
+.question-content-container .question-action-container,
+.question-detail-content-container .question-detail-item,
+.question-detail-content-container .question-detail-action-container,
+.question-detail-content-container .question-action-container {
+    padding: 19px 34px;
+}
+
+.question-content-container .question-item-title,
+.question-detail-content-container .question-detail-item-title {
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.question-content-container .error-no-select {
+    color: #F44336;
+}
+
+.question-content-container .question-item-option {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.question-content-container .question-item-option-title {
+	height: 20px !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    color: #000;
+}
+
+.question-content-container .question-item-option,
+.question-detail-content-container .question-detail-item-option {
+    font-size: 16px !important;
+    color: #000;
+}
+
+[type="checkbox"]:checked + span:not(.lever):before,
+[type="checkbox"].filled-in:checked + span:not(.lever):after,
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    border-color: #1E88E5;
+    background-color: #1E88E5;
+}
+
+[type="radio"]+span:before, [type="radio"]+span:after {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after,
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after{
+    border-color: #1E88E5;
+}
+
+.question-content-container .question-action-container .btn {
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+.question-detail-item-option-content {
+    overflow: hidden;
+    text-align: right;
+}
+
+.question-detail-item-option-content-bar {
+    overflow: hidden;
+    position: relative;
+    top: 6px;
+    height: 11px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.question-detail-item-option-content-bar .question-detail-item-option-content-bar-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #1E88E5;
+    width: 0;
+    transition: all 1s;
+}
+
+.to-question-list {
+    padding-top: 25px;
+}
+
+.question-list-container .collection-item {
+    padding: 20px;
+    font-size: 1.23rem;
+    color: #1E88E5 !important;
+}
+
+.question-list-container .secondary-content {
+    color: #1E88E5;
+}
+
+.question-list-container .collection {
+    margin: 0;
+    border: 0;
+}
+
+.slide-to-bottom-opacity-show {
+    transform: translateY(-123px);
+    animation: slide-to-bottom-opacity-show .5s cubic-bezier(0.0,0.0,0.6,1) forwards;
+ }
+
+@keyframes slide-to-bottom-opacity-show {
+    from {
+        transform: translateY(-123px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.slide-to-bottom-opacity-none {
+    animation: slide-to-bottom-opacity-none .5s cubic-bezier(0.0,0.0,0.6,1) forwards;
+}
+
+@keyframes slide-to-bottom-opacity-none {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(123px);
+    }
+}
+
+.slide-to-top-opacity-show {
+    animation: slide-to-top-opacity-show .5s cubic-bezier(0.0,0.0,0.6,1) forwards;
+}
+
+@keyframes slide-to-top-opacity-show {
+    from {
+        opacity: 0;
+        transform: translateY(123px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
