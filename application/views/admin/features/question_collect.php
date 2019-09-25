@@ -184,10 +184,10 @@
                                     });
 
                                     var question = data.questionDetail;
-                                    // 投票详情
+                                    // 问卷详情
                                     var questionDetail = $(html.questionDetail());
 
-                                    // 投票问题
+                                    // 问卷问题
                                     var questionDetailItemAutoIncrement = 0;
                                     var questionDetailItemContainer = questionDetail.find('.question-detail-item-container');
                                     $.each(question.question_items, function (index, questionItem) {
@@ -202,7 +202,7 @@
                                         }
                                         questionDetailItem.find('.question-detail-item-title').text(++questionDetailItemAutoIncrement + '. ' + questionItem.question_item_title + ' ' + questionSelectType);
 
-                                        // 投票选项
+                                        // 问卷选项
                                         var questionDetailItemOptionContainer = questionDetailItem.find('.question-detail-item-option-container');
                                         $.each(questionItem.question_item_options, function (index2, questionItemOption) {
                                             var questionDetailItemOption = $(html.questionDetailItemOption());

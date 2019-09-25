@@ -20,7 +20,7 @@ class Features extends Frontend_Controller
     }
 
     /**
-     * 投票列表
+     * 问卷列表
      *
      * @return void
      */
@@ -31,14 +31,14 @@ class Features extends Frontend_Controller
         if (empty($questions)) {
             Tool::show_tooltip([
                 'page_title' => '来自友情提示',
-                'tooltip_title' => '暂无投票可填写',
-                'tooltip_content' => '当前暂无可填写的投票，请稍后重试'
+                'tooltip_title' => '暂无问卷可填写',
+                'tooltip_content' => '当前暂无可填写的问卷，请稍后重试'
             ]);
         }
 
         $data = [
             'page' => [
-                'title' => '投票列表',
+                'title' => '问卷列表',
                 'view' => 'frontend/features/question_list'
             ],
             'questions' => $questions
@@ -47,7 +47,7 @@ class Features extends Frontend_Controller
     }
 
     /**
-     * 投票视图
+     * 问卷视图
      *
      * @param  string $question_id
      * @return void
@@ -59,13 +59,13 @@ class Features extends Frontend_Controller
         $question_info = [
             'question_id' => $question_id
         ];
-        // 是否已经填写过投票
+        // 是否已经填写过问卷
         $condition = [
             'question_id' => $question_id,
             'ip_address' => Tool::get_ip()
         ];
         if (empty($this->common_model->get($this->question_collect_table, '', $condition))) {
-            // 获取投票详情
+            // 获取问卷详情
             $question_info['question_join'] = 'false';
         } else {
             $question_info['question_join'] = 'true';
@@ -73,7 +73,7 @@ class Features extends Frontend_Controller
 
         $data = [
             'page' => [
-                'title' => '投票调查',
+                'title' => '问卷调查',
                 'view' => 'frontend/features/question'
             ],
             'question_info' => $question_info
@@ -82,7 +82,7 @@ class Features extends Frontend_Controller
     }
 
     /**
-     * 获取投票详情
+     * 获取问卷详情
      *
      * @return string
      */
@@ -101,7 +101,7 @@ class Features extends Frontend_Controller
     }
 
     /**
-     * 保存投票结果
+     * 保存问卷结果
      *
      * @return string
      */

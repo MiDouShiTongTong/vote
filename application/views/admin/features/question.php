@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="" class="col-sm-2 col-form-label">
                                         有效时间
@@ -279,7 +279,7 @@
                     return '<div class="question"detail->\
                                 <div class="question-detail-desc-list-group container-fluid">\
                                     <div class="question-detail-desc-list-group-item row mb-4">\
-                                        <div class="col-xs-1 px-0">投票标题</div>\
+                                        <div class="col-xs-1 px-0">问卷标题</div>\
                                             <div class="col-xs-11">\
                                                 <p>\
                                                     <span class="question-detail-title"></span>\
@@ -298,7 +298,7 @@
                                             </div>\
                                         </div>\
                                         <div class="question-detail-desc-list-group-item row mb-4">\
-                                            <div class="col-xs-1 px-0">投票人数</div>\
+                                            <div class="col-xs-1 px-0">问卷人数</div>\
                                             <div class="col-xs-11 text-muted">\
                                             <p>\
                                                 <span class="question-detail-counter">default</span>人\
@@ -438,10 +438,10 @@
                     // 关闭新增修改容器
                     elem.closeDataActionContainer.click(cEvent.closeDataActionContainer);
 
-                    // 添加投票
+                    // 添加问卷
                     elem.toAddQuestion.click(event.toAddQuestion);
 
-                    // 修改投票
+                    // 修改问卷
                     elem.dtbBody.on('click', '.to-edit-question', event.toEditQuestion);
 
                     // 新增修改执行事件
@@ -453,7 +453,7 @@
                     // 新增问题
                     elem.addQuestionItem.on('click', event.addQuestionItem);
 
-                    // 切换投票选项显示
+                    // 切换问卷选项显示
                     elem.dataActionContainer.on('click', '.question-item-display-toggle', event.questionItemContentToggle);
 
                     // 删除问题
@@ -465,7 +465,7 @@
                     // 删除问题选项
                     elem.dataActionContainer.on('click', '.del-question-item-option', event.delQuestionItemOption);
 
-                    // 查看投票调查详情
+                    // 查看问卷调查详情
                     elem.dataContainer.on('click', '.to-question-detail', event.toQuestionDetail);
                 },
                 initDataActionContainer: function (actionType) {
@@ -591,7 +591,7 @@
                     }
 
                     var questionItems = [];
-                    // 获取投票问题
+                    // 获取问卷问题
                     $.each(elem.questionItemContainer.find('.question-item'), function () {
                         var _this = $(this);
                         var questionItem = {};
@@ -823,7 +823,7 @@
                             tool.closeLoad();
                             if (data.errCode == 0) {
                                 var question = data.question;
-                                // 投票详情
+                                // 问卷详情
                                 var questionDetail = $(html.questionDetail());
                                 // set
                                 questionDetail.find('.question-detail-title').text(question.question_title);
@@ -831,7 +831,7 @@
                                 questionDetail.find('.question-detail-end-time').text(question.end_time);
                                 questionDetail.find('.question-detail-counter').text(question.question_collect_counter);
 
-                                // 投票问题
+                                // 问卷问题
                                 var questionDetailItemAutoIncrement = 0;
                                 var questionDetailItemContainer = questionDetail.find('.question-detail-item-container');
                                 $.each(question.question_items, function (index, questionItem) {
@@ -846,7 +846,7 @@
                                     }
                                     questionDetailItem.find('.question-detail-item-title').text(++questionDetailItemAutoIncrement + '. ' + questionItem.question_item_title + ' ' + questionSelectType);
 
-                                    // 投票选项
+                                    // 问卷选项
                                     var questionDetailItemOptionContainer = questionDetailItem.find('.question-detail-item-option-container');
                                     $.each(questionItem.question_item_options, function (index2, questionItemOption) {
                                         var questionDetailItemOption = $(html.questionDetailItemOption());

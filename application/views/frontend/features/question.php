@@ -34,7 +34,7 @@
                                 <div class="question-action-container">\
                                     <button class="btn waves-effect btn blue darken-1 question-collect">提交</button>\
                                     <div class="to-question-list">\
-                                        <a href="<?php echo site_url('question/list'); ?>" class="waves-effect pjax">←返回投票列表</a>\
+                                        <a href="<?php echo site_url('question/list'); ?>" class="waves-effect pjax">←返回问卷列表</a>\
                                     </div>\
                                 </div>\
                             </div>';
@@ -58,9 +58,9 @@
                                 <div class="question-detail-title"></div>\
                                 <div class="question-detail-item-container"></div>\
                                 <div class="question-detail-action-container">\
-                                    <button class="btn waves-effect btn blue darken-1 disabled question-collect">您已参此投票</button>\
+                                    <button class="btn waves-effect btn blue darken-1 disabled question-collect">您已参此问卷</button>\
                                     <div class="to-question-list">\
-                                        <a href="<?php echo site_url('question/list'); ?>" class="waves-effect pjax">←填写其他投票</a>\
+                                        <a href="<?php echo site_url('question/list'); ?>" class="waves-effect pjax">←填写其他问卷</a>\
                                     </div>\
                                 </div>\
                             </div>';
@@ -164,7 +164,7 @@
                         var question = data.question;
 
                         if (question == '') {
-                            tool.showToast('投票不存在');
+                            tool.showToast('问卷不存在');
                             return false;
                         }
 

@@ -24,9 +24,9 @@ class Question_model extends CI_Model
     protected $question_collect_detail_table_primaryKey = 'question_collect_detail_id';
 
     /**
-     * 获取投票详情
+     * 获取问卷详情
      *
-     * @param  string $question_id 投票id
+     * @param  string $question_id 问卷id
      * @return mixed
      */
     public function get_question_detail($question_id)
@@ -34,7 +34,7 @@ class Question_model extends CI_Model
         $condition = [
             'question_id' => $question_id
         ];
-        // 获取投票
+        // 获取问卷
         $question = $this->common_model->get($this->question_table, '', $condition);
         if (!empty($question)) {
             $question = $question[0];
@@ -44,7 +44,7 @@ class Question_model extends CI_Model
             // 获取问题
             $question_items = $this->common_model->get($this->question_item_table, '', $condition);
             if (!empty($question_items)) {
-                // 获取投票 选择的总人数
+                // 获取问卷 选择的总人数
                 $question->question_collect_counter = $this->db->query("SELECT COUNT(DISTINCT ip_address) AS questionCollectCounter FROM $this->question_collect_table WHERE question_id = $question_id")->result()[0]->questionCollectCounter;
                 foreach ($question_items as $_key_question_item => $question_item) {
                     $condition = [

@@ -55,11 +55,11 @@ $lang = [
     'sys_permission' => '系统权限',
 
     // Features
-    'question_title' => '投票标题',
+    'question_title' => '问卷标题',
     'start_time' => '开始时间',
     'end_time' => '结束时间',
     'ip_address' => 'ip地址',
     'commit_address' => '提交地址',
-    'question_detail' => '投票调查详情',
+    'question_detail' => '问卷调查详情',
 ];
 

@@ -7,7 +7,7 @@
         <div class="top-line blue accent-1"></div>
         <div class="question-list-container">
             <ul class="collection with-header">
-                <li class="question-list-title">投票列表</li>
+                <li class="question-list-title">问卷列表</li>
                 <?php
                 if (!empty($questions)) {
                     foreach ($questions as $_key => $question) {

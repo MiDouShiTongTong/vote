@@ -19,7 +19,7 @@ class Features extends Admin_Controller
     }
 
     /**
-     * 投票视图
+     * 问卷视图
      *
      * @return void
      */
@@ -54,7 +54,7 @@ class Features extends Admin_Controller
     }
 
     /**
-     * 获取所有投票
+     * 获取所有问卷
      *
      * @return string
      */
@@ -134,7 +134,7 @@ class Features extends Admin_Controller
     }
 
     /**
-     * 保存投票
+     * 保存问卷
      *
      * @return string
      */
@@ -224,7 +224,7 @@ class Features extends Admin_Controller
                         $question_item_id = $this->common_model->get_insert_id();
                     }
 
-                    // 修改投票选项
+                    // 修改问卷选项
                     foreach ($question_item['questionItemOptions'] as $_key_question_item_option => $question_item_option) {
                         $data = [
                             'question_id' => $question_id,
@@ -268,7 +268,7 @@ class Features extends Admin_Controller
     }
 
     /**
-     * 获取投票详情 [修改]
+     * 获取问卷详情 [修改]
      *
      * @return string
      */
@@ -413,7 +413,7 @@ class Features extends Admin_Controller
     }
 
     /**
-     * 获取投票提交
+     * 获取问卷提交
      *
      */
     public function get_question_detail_and_question_collect_detail()
